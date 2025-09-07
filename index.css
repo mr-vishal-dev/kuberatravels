@@ -1,0 +1,251 @@
+body {
+    margin: 0px;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+:root {
+    --theme-color: rgb(1, 30, 91);
+}
+
+header {
+    height: 100dvh;
+    background-image: url(dost.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px;
+}
+
+header nav img {
+    border-radius: 50px;
+    height: 5dvw;
+    width: 5dvw;
+    box-shadow: 0px 0px 10px rgba(92, 212, 212, 0.521);
+}
+header nav img:hover{
+    transform: scale(1.02)
+}
+
+header nav ol {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0px;
+    padding: 0px;
+}
+
+header nav ol li {
+    position: relative;
+    height: fit-content;
+}
+
+header nav ol li::after {
+    content: '';
+    position: absolute;
+    background: linear-gradient(to right, rgb(77, 227, 250), violet);
+    height: 1.5px;
+    width: 0%;
+    bottom: 0px;
+    left: 0px;
+    transition: all 0.5s linear;
+    border-radius: 20px;
+}
+
+header nav ol li:hover::after {
+    width: 100%;
+}
+
+header nav ol li a {
+    font-size: clamp(10px, 2dvw, 15px);
+    font-family: 'Trebuchet MS';
+    text-decoration: none;
+    color: white;
+}
+
+.menubar {
+    display: none;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+header section:nth-of-type(1) {
+    position: relative;
+    margin-top: 30dvh;
+    margin-left: 5dvw;
+    width: fit-content;
+    text-align: center;
+}
+
+header section:nth-of-type(1) h1 {
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    color: transparent;
+    background: linear-gradient(rgb(248, 159, 25), rgb(239, 205, 37));
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 0.2px black;
+    font-size: clamp(20px, 3dvw, 30px);
+    margin: 0px;
+    letter-spacing: 1.5px;
+}
+
+header section:nth-of-type(1) h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    color: transparent;
+    background: linear-gradient(rgb(254, 253, 252), rgb(252, 249, 249));
+    -webkit-background-clip: text;
+    text-shadow: 1px 1px 5px rgba(78, 78, 78, 0.788);
+    -webkit-text-stroke: 0.2px black;
+    font-size: clamp(15px, 2dvw, 18px);
+}
+
+header section:nth-of-type(2) {
+    margin-left: 5dvw;
+    width: 30dvw;
+}
+
+header section:nth-of-type(2) p {
+    width: fit-content;
+    margin-top: 10dvh;
+    color: white;
+    font-family: sans-serif;
+    font-size: clamp(10px, 2dvw, 15px);
+}
+
+header section:nth-of-type(2) button {
+    border-radius: 5px;
+    background-color: var(--theme-color);
+    border: none;
+    font-size: clamp(7px, 1dvw, 10px);
+    color: white;
+    float: right;
+    font-weight: bold;
+    position: relative;
+    height: clamp(17px, 7dvw, 25px);
+    width: clamp(55px, 7dvw, 80px);
+    text-align: center;
+    overflow: hidden;
+}
+
+header section:nth-of-type(2) button::after {
+    content: '';
+    position: absolute;
+    top: 0%;
+    left: -20%;
+    height: 100%;
+    width: 20px;
+    background-color: rgba(103, 102, 102, 0.498);
+    transform: skew(-20deg);
+    animation: btnshadow 2s linear infinite;
+}
+
+@keyframes btnshadow {
+    from {}
+
+    to {
+        left: 120%;
+    }
+}
+
+main {
+    height: 100dvh;
+}
+
+.floating-logo {
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    background-color: rgb(255, 255, 255);
+    color: rgb(24, 177, 58);
+    border: 50%;
+    width: 40px;
+    transition: width 0.5s linear;
+    overflow: hidden;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: 1px solid rgb(24, 177, 58);
+}
+
+.floating-logo:hover {
+    cursor: pointer;
+}
+
+aside {
+    position: absolute;
+    inset: 0%;
+    background-color: rgba(0, 0, 0, 0.484);
+    visibility: hidden;
+}
+
+aside ol {
+    display: flex;
+    flex-direction: column;
+    width: 30dvw;
+    backdrop-filter: blur(10px);
+    list-style: none;
+    position: fixed;
+    right: -100px;
+    top: 0px;
+    bottom: 0px;
+    margin: 0px;
+    padding: 0px;
+    transition: right 0.5s linear;
+}
+
+aside ol li {
+    border-bottom: 1px solid gray;
+    padding: 20px;
+}
+
+aside ol a {
+    font-size: clamp(10px, 2dvw, 15px);
+    font-family: 'Trebuchet MS';
+    text-decoration: none;
+    color: white;
+}
+
+.star {
+    height: 2px;
+    width: 2px;
+    background-color: white;
+    position: absolute;
+}
+
+.shake {
+    animation: shaking 1s linear infinite;
+}
+
+@keyframes shaking {
+    50% {
+        transform: rotate(20deg);
+    }
+}
+
+@media screen and (max-width:500px) {
+    .menubar {
+        display: block;
+    }
+
+    header nav ol {
+        display: none;
+    }
+
+    header section:nth-of-type(2) {
+        width: 90dvw;
+    }
+
+    header section:nth-of-type(2) button {
+        float: left;
+    }
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body onscroll="showpara()">
+    <header>
+        <nav>
+            <img src="logo.png" alt="">
+            <ol>
+                <li><a href="">HOME</a></li>
+                <li><a href="">ABOUT US</a></li>
+                <li><a href="">CONTACT US</a></li>
+            </ol>
+            <button class="menubar" onclick="menuopen()"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                    fill="white" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                </svg></button>
+        </nav>
+        <section id="sparkle">
+            <h1>SRI MOORTHY TRANSPORT</h1>
+            <h2>PACKERS AND MOVERS</h2>
+        </section>
+        <section>
+            <p id="typepara"></p>
+            <button>BOOK NOW</button>
+        </section>
+    </header>
+    <aside>
+        <ol id="menubarol">
+            <li><a href="">HOME</a></li>
+            <li><a href="">ABOUT US</a></li>
+            <li><a href="">CONTACT US</a></li>
+        </ol>
+    </aside>
+    <main>
+        <form action="">
+            <input type="text" placeholder="Depature">
+            <input type="text" placeholder="Destination">
+            <button onclick="gomail()">click</button>
+        </form>
+    </main>
+    <div class="floating-logo shake" onclick="openchat()" id="whatsapp">
+        <img src="icons8-whatsapp-48.png" alt="" height="40" width="40"><span id="message-content"></span>
+    </div>
+    <footer>
+
+    </footer>
+    <script>
+        //showing para on scrolling
+        let shown = false
+        function showpara() {
+            if (!shown && scrollY >= window.innerHeight / 8) {
+                shown = true
+                let typewriting = document.getElementById('typepara');
+                let content = "100% Guarantee for Safe and On time Delivery of your goods in our primary concern..."
+                let len = content.length;
+                let index = 0;
+
+                let interval = setInterval(() => {
+                    if (index <= content.length) {
+                        typewriting.textContent += content.charAt(index++);
+                    }
+                    else {
+                        clearInterval(interval);
+                    }
+                }, 30)
+            }
+        }
+
+        //whatsapp support
+        let whatsapp = document.getElementById('whatsapp');
+        let message = document.getElementById('message-content');
+
+        function openchat() {
+
+            if (whatsapp.style.width === "100px") {
+                whatsapp.style.cssText = "width:40px;";
+                message.innerText = ''
+                setTimeout(() => {
+                    whatsapp.classList.add('shake');
+                }, 1000);
+            }
+            else {
+                whatsapp.style.cssText = "width:100px";
+                message.innerText = "message";
+                whatsapp.classList.remove('shake');
+            }
+        }
+
+        //menubar
+        let menubarol = document.getElementById('menubarol');
+        let aside = document.querySelector('aside');
+        function menuopen() {
+            aside.style.visibility = "visible";
+            menubarol.style.right = "0vw";
+            document.body.style.overflow = "hidden";
+        }
+        aside.addEventListener('click', (e) => {
+            if (!menubarol.contains(e.target)) {
+                menubarol.style.right = "-30dvw";
+                setTimeout(() => {
+                    aside.style.visibility = "hidden"
+                }, 500)
+                document.body.style.overflow = "visible";
+            }
+        })
+
+        //title sparkle
+        let sparklespace = document.getElementById('sparkle');
+        let sparkleplacewidth = sparklespace.scrollWidth;
+        let sparkleplaceheight = sparklespace.scrollHeight / 2;
+        console.log(sparkleplaceheight)
+
+        setInterval(() => {
+            let star = document.createElement('div');
+            star.classList.add('star');
+            let randomX = Math.floor(Math.random() * sparkleplacewidth);
+            let randomY = Math.floor(Math.random() * sparkleplaceheight);
+            star.style.top = `${randomY}px`
+            star.style.left = `${randomX}px`
+            sparklespace.appendChild(star)
+            setTimeout(() => {
+                star.remove();
+            }, 100)
+        }, 100)
+
+        //mail
+        function gomail() {
+            window.location.href = 'mailto:grvishal2005@gmail.com';
+        }
+    </script>
+</body>
+
+</html>
