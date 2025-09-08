@@ -17,7 +17,7 @@
                 <li><a href="">ABOUT US</a></li>
                 <li><a href="">CONTACT US</a></li>
             </ol>
-            <button class="menubar" onclick="menuopen()"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+            <button class="menubar" onclick="menuopen()"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35"
                     fill="white" class="bi bi-list" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
                         d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
@@ -29,8 +29,9 @@
         </section>
         <section>
             <p id="typepara"></p>
-            <button>BOOK NOW</button>
+            <button><a href="">BOOK NOW</a></button>
         </section>
+        <button id="swipe">swipe</button>
     </header>
     <aside>
         <ol id="menubarol">
@@ -40,15 +41,48 @@
         </ol>
     </aside>
     <main>
-        <form action="">
-            <input type="text" placeholder="Depature">
-            <input type="text" placeholder="Destination">
-            <button onclick="gomail()">click</button>
-        </form>
+        <fieldset class="input-field">
+            <legend>BOOKING</legend>
+            <div class="row">
+                <div class="input-bar">
+                    <input type="text" id="cus-name" placeholder=" " required>
+                    <label for="">Name</label>
+                </div>
+                <div class="input-bar">
+                    <input type="date" id="date" placeholder=" " required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-bar">
+                    <input type="text" id="from-add" placeholder=" " required>
+                    <label for="">From</label>
+                </div>
+                <div class="input-bar">
+                    <input type="text" id="to-add" placeholder=" " required>
+                    <label for="">To</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-bar">
+                    <input type="number" id="con-number" placeholder=" " required>
+                    <label for="">Contact number</label>
+                </div>
+                <div class="input-bar">
+                    <input type="email" id="mail-id" placeholder=" " required>
+                    <label for="">Mail Id</label>
+                </div>
+            </div>
+             <button onclick="gomail()">Send</button>
+        </fieldset>
+        <div>
+
+        </div>
     </main>
     <div class="floating-logo shake" onclick="openchat()" id="whatsapp">
-        <img src="icons8-whatsapp-48.png" alt="" height="40" width="40"><span id="message-content"></span>
+        <img src="icons8-whatsapp-48.png" alt="" height="40" width="40"><a href="https://wa.me/8248688471"
+            id="message-content"></a>
     </div>
+    
     <footer>
 
     </footer>
@@ -56,7 +90,7 @@
         //showing para on scrolling
         let shown = false
         function showpara() {
-            if (!shown && scrollY >= window.innerHeight / 8) {
+            if (!shown && scrollY >= window.innerHeight * 0.10) {
                 shown = true
                 let typewriting = document.getElementById('typepara');
                 let content = "100% Guarantee for Safe and On time Delivery of your goods in our primary concern..."
@@ -72,6 +106,13 @@
                     }
                 }, 30)
             }
+            let swipe = document.getElementById('swipe');
+            if (scrollY >= innerHeight) {
+                swipe.style.display = "none";
+            }
+            else {
+                swipe.style.display = "block";
+            }
         }
 
         //whatsapp support
@@ -80,15 +121,15 @@
 
         function openchat() {
 
-            if (whatsapp.style.width === "100px") {
-                whatsapp.style.cssText = "width:40px;";
+            if (whatsapp.style.width === "110px") {
+                whatsapp.style.cssText = "width:40px;outline:none";
                 message.innerText = ''
                 setTimeout(() => {
                     whatsapp.classList.add('shake');
                 }, 1000);
             }
             else {
-                whatsapp.style.cssText = "width:100px";
+                whatsapp.style.cssText = "width:110px;outline:1px solid rgb(24, 177, 58)";
                 message.innerText = "message";
                 whatsapp.classList.remove('shake');
             }
@@ -104,7 +145,7 @@
         }
         aside.addEventListener('click', (e) => {
             if (!menubarol.contains(e.target)) {
-                menubarol.style.right = "-30dvw";
+                menubarol.style.right = "-50dvw";
                 setTimeout(() => {
                     aside.style.visibility = "hidden"
                 }, 500)
@@ -132,9 +173,16 @@
         }, 100)
 
         //mail
+        let cus_name = document.getElementById('cus-name').value;
+        let date = document.getElementById('date').value;
+        let from_add = document.getElementById('from-add').value;
+        let to_add = document.getElementById('to-add').value;
+        let con_number = document.getElementById('con-number').value;
+        let mail_id = document.getElementById('mail-id').value;
         function gomail() {
-            window.location.href = 'mailto:grvishal2005@gmail.com';
+            window.location.href = `mailto:srimoorthypackersandmovers@gmail.com?subject=booking%20vehicle&body=name%20:${cus_name}%0ADate%20:${date}%0AFrom%20:${from_add}%0ATo%20:${to_add}%0APhone%20:${con_number}`;
         }
+
     </script>
 </body>
 
