@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        header {
+            background: linear-gradient(to left, #351038, rgb(79, 1, 49));
+            padding: 4px;
+        }
+
+        button {
+            margin-left: 5px;
+            width: fit-content;
+            border-radius: 50%;
+            padding: 2px 2px;
+            border: none;
+            background: linear-gradient(to left, rgb(135, 7, 126), rgb(230, 91, 114));
+            color: rgb(0, 0, 0);
+            box-shadow: 2px 0px 3px rgb(103, 42, 42);
+            display: flex;
+            align-items: center;
+        }
+        main {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: 1fr 2.5fr;
+            padding: 2dvw;
+            column-gap: 30px;
+        }
+
+        main div:nth-of-type(1) img {
+            height: auto;
+            width: 100%;
+        }
+
+        main div:nth-of-type(2) {
+
+            border: 1.3px solid rgb(107, 2, 118);
+            padding: 10px;
+            border-radius: 10px;
+            background: linear-gradient(to left, rgb(235, 235, 235), white, white, rgb(240, 240, 240));
+            box-shadow: 5px 5px 20px rgb(188, 187, 188);
+        }
+
+        main div:nth-of-type(2) h1 {
+            display: flex;
+            justify-self: center;
+            text-align: center;
+            transform: translateY(-25px);
+            background: linear-gradient(to left, rgb(84, 2, 77), rgb(187, 6, 78));
+            color: white;
+            width: fit-content;
+            font-size: 14px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            padding: 6px 11px;
+            border-radius: 50%;
+        }
+
+        main div:nth-of-type(2) p {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            padding: 10px;
+        }
+
+        main div:nth-of-type(2) h4 {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: white;
+            margin: 10px;
+            margin-bottom: 0px;
+            padding: 4px 10px;
+            width: fit-content;
+            border-radius: 5px;
+            background: linear-gradient(to left, rgb(230, 91, 114), rgb(81, 0, 81));
+            box-shadow: 1px 1px 3px rgb(183, 3, 183);
+        }
+        main .image{
+            background: url(servicepage.png);
+            background-size: cover;
+            border-radius: 10px;
+            background-position: center;
+            box-shadow: 2px 2px 3px rgb(114, 114, 114),-2px -2px 3px rgb(114, 114, 114);
+        }
+        footer {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            column-gap: 6dvw;
+            padding: 6dvw;
+            background: linear-gradient(to left, #351038, rgb(79, 1, 49));
+            color: white;
+        }
+
+        footer div:nth-of-type(1) h1,
+        footer div:nth-of-type(2) h1,
+        footer div:nth-of-type(3) h1,
+        footer div:nth-of-type(4) h1 {
+            margin: 0px;
+            margin-bottom: 15px;
+            padding: 3px 5px;
+            border-radius: 10px;
+            font-size: clamp(11px, 2dvw, 18px);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            width: fit-content;
+            background: linear-gradient(to left, rgb(230, 91, 114), transparent);
+        }
+
+        footer div:nth-of-type(1) h2 {
+            margin: 0px;
+            font-size: clamp(8px, 2dvw, 14px);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        footer div p {
+
+            font-size: clamp(8px, 1dvw, 12px);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+        footer div ol {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            row-gap: 5px;
+        }
+
+        footer div ol li a {
+            color: white;
+            text-decoration: none;
+            font-size: clamp(8px, 1dvw, 12px);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        footer div ol li a:hover {
+            text-decoration: underline;
+        }
+
+        .lightning {
+            height: 2px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lightning::after {
+            position: absolute;
+            content: '';
+            height: 1.5px;
+            left: -200%;
+            width: 300%;
+            background: linear-gradient(to left, rgb(56, 1, 56), rgb(222, 207, 241), rgb(67, 3, 67));
+            animation: moving 2s infinite linear;
+        }
+
+        @keyframes moving {
+            from {
+                left: -200%;
+            }
+
+            to {
+                left: 0%;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            main {
+                row-gap: 40px;
+                grid-template-columns: 1fr;
+                grid-template-rows: 300px;
+            }
+            footer {
+                margin-top: 30px;
+                grid-template-columns: 1fr;
+                row-gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <button onclick="window.history.back()"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+                fill="white" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5" />
+            </svg></button>
+    </header>
+    <main>
+        <div class="image">
+        </div>
+        <div>
+            <h1>ABOUT US</h1>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sri Moorthy Transport Packers and Movers in Kumbakonam is a
+                premier transportation company that has been
+                providing top-notch solutions te meet diverse client needs. The company is located in the heart of
+                Kumbakonam,
+                making it convenient for clients to access their services, since its establishment in 2000.</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We believe in precision, punctuality, and professionalism.
+                Our expert team ensures secure packing, careful
+                handling, and timely delivery, so you can sit back and enjoy a hassle-free move. Whether you're
+                relocating locally or
+                across cities, sri moorthy transport packers & Movers is here to make your journey effortless.</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sree Moorthy Tata Ace, established in 2010, has been
+                facilitating seamless moving experiences for over a
+                decade. With over 500 shifts conducted, they have covered more than 1000 houses, achieving an impressive
+                95% user
+                satisfaction rate on Sulekha. Their commitment to excellence and customer satisfaction has made them a
+                trusted name
+                in the moving industry</p>
+            <div class="lightning"></div>
+
+            <h4>commitment</h4>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sri Moorthy Transport in Kumbakonam aims to provide more than
+                just transportation; they deliver
+                exceptional
+                experiences that excee@ pectations. Their dedicated team is ready to assist in selecting the right
+                vehicle for your
+                needs, ensuring a safe, comfortable, and memorable journey. They understand the crucial role
+                transportati a nlays in
+                travel experiences, whether for family vacations, business trips, or special events. Their fleet of
+                well-maintained
+                vehicles and professional drivers ensure safe, comfortable, and hassle-free journeys.</p>
+            <p>Thank you for considering Sri Moorthy Transport in , Kumbakonam for your transportation needs. They look
+                forward
+                serving you and ensuring your next journey is delightful and stress-free.</p>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <h1>ABOUT US</h1>
+            <h2>SRI MOORTHY TRANSPORT</h2>
+            <p>More than 2years of experience, reliable partner</p>
+        </div>
+        <div>
+            <h1>NAVIGATION</h1>
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+            </ol>
+        </div>
+        <div>
+            <h1>TRANSPORT OFFICE</h1>
+            <P>85/A seenivasa nagar sakkotai(po), kumbakonam, 612401.</P>
+            <p>8940481999, 9789401999</p>
+        </div>
+        <div>
+            <h1>WORKING HOURS</h1>
+            <p>We work 7 days a week, every day
+                including major holidays.Contact us for
+                any info.</p>
+            <p>Monday-saturday: 6:00-23:00</p>
+            <p>Sunday and holidays: 6:00-23:00</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRI MOORTHY TRANSPORT</title>
+    <link rel="icon" href="logo.png">
+    <link rel="stylesheet" href="index.css">
+    <style>
+    </style>
+</head>
+
+<body onscroll="showpara()">
+    <header>
+        <nav>
+            <div class="image-div">
+                <div id="logo-bg">
+                    <img src="logo.png" alt="" onclick="showlogo()" id="logo" class="lgimg">
+                </div>
+                <div class="location">
+                    <h3>Kumbakonam</h3>
+                </div>
+            </div>
+            <ol>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li><a href="service.html">OUR SERVICES</a></li>
+                <li><a href="#footer">CONTACT US</a></li>
+            </ol>
+            <button class="menubar" onclick="menuopen()"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35"
+                    fill="white" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                </svg></button>
+        </nav>
+        <section id="sparkle">
+            <h1>SRI MOORTHY TRANSPORT</h1>
+            <h2>PACKERS AND MOVERS</h2>
+        </section>
+        <section>
+            <p id="typepara"></p>
+            <button><a href="#main">BOOK NOW</a></button>
+        </section>
+        <button id="swipe"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray"
+                class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                <path fill-rule="evenodd"
+                    d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+            </svg></button>
+    </header>
+    <aside>
+        <ol id="menubarol">
+            <li><a href="about.html">ABOUT US</a></li>
+            <li><a href="service.html">SERVICE</a></li>
+            <li onclick="menuclose()"><a href="#footer">CONTACT US</a></li>
+        </ol>
+    </aside>
+    <main id="main">
+        <fieldset class="input-field">
+            <legend>BOOKING</legend>
+            <form onsubmit="gomail(event)">
+                <div class="row">
+                    <div class="input-bar">
+                        <input type="text" id="cus-name" placeholder=" " name="name" required>
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="input-bar">
+                        <input type="number" id="con-number" placeholder=" " name="con" required>
+                        <label for="con">Contact number</label>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="input-bar">
+                        <input type="text" id="from-add" placeholder=" " required>
+                        <label for="">From</label>
+                    </div>
+                    <div class="input-bar">
+                        <input type="text" id="to-add" placeholder=" " required>
+                        <label for="">To</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-bar">
+                        <input type="date" id="date" placeholder="" required>
+                        <label for="">Date :</label>
+                    </div>
+                    <div class="input-bar">
+                        <input type="time" id="timing" placeholder=" " required>
+                        <label for="">Time :</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-bar">
+                        <textarea name="" id="description" rows="4" placeholder=" "></textarea>
+                        <label for="">Description</label>
+                    </div>
+
+                </div>
+                <button>Send</button>
+            </form>
+        </fieldset>
+        <div class="main-right">
+            <img src="home page.pdf.png" alt="" height="auto" width="100%">
+        </div>
+    </main>
+    <section class="sliding">
+        <div>
+            <span id="inc">20</span><span>k</span>
+            <p>Parcel Delivered</p>
+        </div>
+        <div>
+            <span id="inc">150</span><span>k</span>
+            <p>Satisfied clients</p>
+        </div>
+        <div>
+            <span id="inc">15</span>
+            <p>Years of Experience</p>
+        </div>
+        <div>
+            <span>24/7</span>
+            <p>Customer support</p>
+        </div>
+    </section>
+    <div class="floating-logo shake" onclick="openchat()" id="whatsapp">
+        <img src="icons8-whatsapp-48.png" alt="" height="40" width="40"><a href="https://wa.me/8248688471"
+            id="message-content"></a>
+    </div>
+
+    <footer id="footer">
+        <div>
+            <h1>ABOUT US</h1>
+            <h2>SRI MOORTHY TRANSPORT</h2>
+            <p>More than 2years of experience, reliable partner</p>
+        </div>
+        <div>
+            <h1>NAVIGATION</h1>
+            <ol>
+                <li><a href="">Home</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+            </ol>
+        </div>
+        <div>
+            <h1>TRANSPORT OFFICE</h1>
+            <P>85/A seenivasa nagar sakkotai(po), kumbakonam, 612401.</P>
+            <p>8940481999, 9789401999</p>
+        </div>
+        <div>
+            <h1>WORKING HOURS</h1>
+            <p>We work 7 days a week, every day
+                including major holidays.Contact us for
+                any info.</p>
+            <p>Monday-saturday: 6:00-23:00</p>
+            <p>Sunday and holidays: 6:00-23:00</p>
+        </div>
+    </footer>
+    <script>
+        let dateval = document.getElementById('date');
+        let date = new Date().toISOString().split('T')[0];
+        dateval.setAttribute('min', date)
+
+        //showing para on scrolling
+        let typewriting = document.getElementById('typepara');
+        let content = "100% Guarantee for Safe and On time Delivery of your goods in our primary concern..."
+        let len = content.length;
+        let index = 0;
+        let interval = setInterval(() => {
+            if (index <= content.length) {
+                typewriting.textContent += content.charAt(index++);
+            }
+            else {
+                clearInterval(interval);
+            }
+        }, 30)
+
+        let iscounted = false
+        let swipe = document.getElementById('swipe');
+        function showpara() {
+            if (window.scrollY >= innerHeight) {
+                swipe.style.display = "none";
+            }
+            else {
+                swipe.style.display = "block";
+            }
+
+            if (window.scrollY > innerHeight && iscounted === false) {
+                iscounted = true
+                let inc = document.querySelectorAll('#inc');
+                inc.forEach(element => {
+                    let stop = element.innerText;
+                    let count = 0;
+                    let speed = (100 * (50 / stop));
+                    let countinterval = setInterval(() => {
+                        count++;
+                        element.innerText = count;
+                        if (count >= stop) {
+                            clearInterval(countinterval)
+                        }
+                    }, speed)
+                });
+            }
+            else if (window.scrollY < innerHeight) {
+                iscounted = false
+            }
+        }
+
+        //whatsapp support
+        let whatsapp = document.getElementById('whatsapp');
+        let message = document.getElementById('message-content');
+
+        function openchat() {
+
+            if (whatsapp.style.width === "110px") {
+                whatsapp.style.cssText = "width:40px;outline:none";
+                message.innerText = ''
+                setTimeout(() => {
+                    whatsapp.classList.add('shake');
+                }, 1000);
+            }
+            else {
+                whatsapp.style.cssText = "width:110px;outline:1px solid rgb(24, 177, 58)";
+                message.innerText = "message";
+                whatsapp.classList.remove('shake');
+            }
+        }
+        //menubar
+        let menubarol = document.getElementById('menubarol');
+        let aside = document.querySelector('aside');
+        function menuopen() {
+            aside.style.visibility = "visible";
+            menubarol.style.right = "0vw";
+            document.body.style.overflow = "hidden";
+        }
+        function menuclose() {
+            menubarol.style.right = "-50dvw";
+            setTimeout(() => {
+                aside.style.visibility = "hidden"
+            }, 500)
+            document.body.style.overflow = "visible";
+        }
+        aside.addEventListener('click', (e) => {
+            if (!menubarol.contains(e.target)) {
+                menubarol.style.right = "-50dvw";
+                setTimeout(() => {
+                    aside.style.visibility = "hidden"
+                }, 500)
+                document.body.style.overflow = "visible";
+            }
+        })
+
+        //title sparkle
+        let sparklespace = document.getElementById('sparkle');
+        let sparkleplacewidth = sparklespace.scrollWidth;
+        let sparkleplaceheight = sparklespace.scrollHeight / 2;
+
+        setInterval(() => {
+            let star = document.createElement('div');
+            star.classList.add('star');
+            let randomX = Math.floor(Math.random() * sparkleplacewidth);
+            let randomY = Math.floor(Math.random() * sparkleplaceheight);
+            star.style.top = `${randomY}px`
+            star.style.left = `${randomX}px`
+            sparklespace.appendChild(star)
+            setTimeout(() => {
+                star.remove();
+            }, 100)
+        }, 100)
+
+        //mail
+        function gomail(e) {
+            e.preventDefault()
+            let cus_name = document.getElementById('cus-name').value;
+            let con_number = document.getElementById('con-number').value;
+            let from_add = document.getElementById('from-add').value;
+            let to_add = document.getElementById('to-add').value;
+            let date = document.getElementById('date').value;
+            let time=document.getElementById('time').value;
+            let description = document.getElementById('description').value;
+            window.location.href = `mailto:srimoorthypackersandmovers@gmail.com?subject=booking%20vehicle&body=name%20:${cus_name}%0ADate%20:${date}%0AFrom%20:${from_add}%0ATo%20:${to_add}%0APhone%20:${con_number}%0ATIME%20:${date}%0ADescription%20:${description}`;
+        }
+        //logopop
+        let logo = document.getElementById('logo');
+        let logobg = document.getElementById('logo-bg');
+        function showlogo() {
+            logo.classList.remove('lgimg');
+            logo.classList.add('logoanimation');
+            logobg.classList.add('logobganimation')
+            document.body.style.overflow = "hidden"
+            logobg.addEventListener('click', (e) => {
+                if (!logo.contains(e.target)) {
+                    logo.classList.add('lgimg');
+                    logo.classList.remove('logoanimation');
+                    logobg.classList.remove('logobganimation')
+                    document.body.style.overflow = "scroll"
+
+                }
+            })
+        }
+
+
+    </script>
+</body>
+
+</html>

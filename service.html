@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        header {
+            display: flex;
+            background: linear-gradient(to left, #351038, rgb(79, 1, 49));
+            margin-bottom: 30px;
+            padding: 5px;
+        }
+
+        footer {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            column-gap: 6dvw;
+            padding: 6dvw;
+            background: linear-gradient(to left, #351038, rgb(79, 1, 49));
+            color: white;
+        }
+
+        footer div:nth-of-type(1) h1,
+        footer div:nth-of-type(2) h1,
+        footer div:nth-of-type(3) h1,
+        footer div:nth-of-type(4) h1 {
+            margin: 0px;
+            margin-bottom: 15px;
+            padding: 3px 5px;
+            border-radius: 10px;
+            font-size: clamp(11px, 2dvw, 18px);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            width: fit-content;
+            background: linear-gradient(to left, rgb(230, 91, 114), transparent);
+        }
+
+        footer div:nth-of-type(1) h2 {
+            margin: 0px;
+            font-size: clamp(8px, 2dvw, 14px);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        footer div p {
+
+            font-size: clamp(8px, 1dvw, 12px);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+        footer div ol {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            row-gap: 5px;
+        }
+
+        footer div ol li a {
+            color: white;
+            text-decoration: none;
+            font-size: clamp(8px, 1dvw, 12px);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        footer div ol li a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            margin-left: 5px;
+            width: fit-content;
+            border-radius: 50%;
+            padding: 2px 2px;
+            border: none;
+            background: linear-gradient(to left, rgb(135, 7, 126), rgb(230, 91, 114));
+            color: rgb(0, 0, 0);
+            box-shadow: 2px 0px 3px rgb(103, 42, 42);
+            display: flex;
+            align-items: center;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 200px 200px;
+            grid-template-areas:
+                "one two five"
+                "three four five";
+            gap: 30px;
+            padding: 30px;
+        }
+
+        main div:nth-of-type(1) {
+            grid-area: one;
+        }
+
+        main div:nth-of-type(2) {
+            grid-area: two;
+        }
+
+        main div:nth-of-type(3) {
+            grid-area: three;
+        }
+
+        main div:nth-of-type(4) {
+            grid-area: four;
+        }
+
+        main div:nth-of-type(5) {
+            grid-area: five;
+        }
+
+        main .text {
+            background: linear-gradient(to left, rgb(235, 235, 235), white, white, rgb(240, 240, 240));
+            border-radius: 10px;
+            box-shadow: 1px 1px 5px rgb(163, 162, 162);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            padding-top: 40px;
+            position: relative;
+        }
+
+        main div h1 {
+            position: absolute;
+            display: flex;
+            justify-self: center;
+            top: -7%;
+            text-align: center;
+            background: linear-gradient(to left, rgb(84, 2, 77), rgb(187, 6, 78));
+            color: white;
+            width: fit-content;
+            font-size: 14px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            padding: 6px 11px;
+            border-radius: 50%;
+        }
+
+        .title {
+            flex-grow: 1;
+            text-align: center;
+            font-size: 20px;
+            align-self: center;
+            color: white;
+            text-shadow: 1px 1px 2px rgb(156, 66, 247), -1px -1px 2px rgb(170, 97, 243);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        main .image {
+            border-radius: 10px;
+            background: url(servicepage.png);
+            background-size: cover;
+            background-position: center;
+            box-shadow: 2px 2px 3px rgb(114, 114, 114), -2px -2px 3px rgb(114, 114, 114);
+
+        }
+
+        @media screen and (max-width: 600px) {
+            main {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(5, fit-content);
+                grid-template-areas:
+                    "five"
+                    "one"
+                    "two"
+                    "three"
+                    "four";
+                row-gap: 50px;
+            }
+
+            footer {
+                margin-top: 30px;
+                grid-template-columns: 1fr;
+                row-gap: 40px;
+
+            }
+
+            main div:not(.cls) {
+                transform: translateX(-300px);
+                transform-origin: left;
+                animation: boxentry;
+                animation-timeline: view(0%);
+            }
+
+            @keyframes boxentry {
+                0% {
+                    transform: translateX(-300px);
+                }
+
+                50% {
+                    transform: translateX(0px);
+                }
+
+                100% {
+                    transform: translateX(0px);
+                }
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <button onclick="window.history.back()"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+                fill="white" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5" />
+            </svg></button>
+        <h1 class="title">OUR SERVICES</h1>
+    </header>
+    <main>
+        <div class="cls text">
+            <h1>Transport</h1>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Whether you're moving locally or over
+                long distances, our timely and reliable
+                transport services ensure that your
+                belongings reach their destination without
+                any hassle. We have a fleet of
+                well-maintained vehicles to suit your needs.</p>
+        </div>
+        <div class="text">
+            <h1>House Shifting</h1>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Relocating your home can be
+                overwhelming. Our household shifting
+                services handle everything from packing to
+                unpacking. We ensure that your furniture,
+                electronics, and personal items are safely
+                moved to your new home, with no damage.</p>
+        </div>
+        <div class="text">
+            <h1>Loading</h1>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our skilled team handles the loading
+                process with utmost care, ensuring that your
+                items are loaded securely to avoid any
+                damage during transit.</p>
+        </div>
+        <div class="text">
+            <h1>Packing</h1>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We use high-quality packing materials
+                to protect your items during transit. From
+                delicate glassware to bulky furniture, our
+                professional packing ensures your
+                belongings are securely packed and safely
+                transported..</p>
+        </div>
+        <div class="cls image">
+        </div>
+    </main>
+    <footer>
+        <div>
+            <h1>ABOUT US</h1>
+            <h2>SRI MOORTHY TRANSPORT</h2>
+            <p>More than 2years of experience, reliable partner</p>
+        </div>
+        <div>
+            <h1>NAVIGATION</h1>
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+            </ol>
+        </div>
+        <div>
+            <h1>TRANSPORT OFFICE</h1>
+            <P>85/A seenivasa nagar sakkotai(po), kumbakonam, 612401.</P>
+            <p>8940481999, 9789401999</p>
+        </div>
+        <div>
+            <h1>WORKING HOURS</h1>
+            <p>We work 7 days a week, every day
+                including major holidays.Contact us for
+                any info.</p>
+            <p>Monday-saturday: 6:00-23:00</p>
+            <p>Sunday and holidays: 6:00-23:00</p>
+        </div>
+    </footer>
+</body>
+
+</html>
